@@ -77,12 +77,14 @@ namespace Assignment
 
             int c = queue.Count;
             List<string> actions = new List<string>();
+            
             for (int i = 0; i < c; i++)
             {
                 //Action a = queue.Dequeue();
                 //actions.Add(queue.Dequeue().Name);
                 var a = queue.Dequeue();
                 actions.Add(a.Name);
+
             }
 
             return actions.ToArray();
@@ -95,11 +97,13 @@ namespace Assignment
         public string ASN01_ReverseString(string str)
         {
             Stack<char> chars = new Stack<char>();
+
             foreach (char c in str)
             {
                 chars.Push(c);
             }
             char[] reversedChars = new char[str.Length];
+
             for (int i = 0; i < reversedChars.Length; i++)
             {
                 reversedChars[i] = chars.Pop();
@@ -113,14 +117,17 @@ namespace Assignment
             foreach (char c in str)
             {
                chars.Push(c);
+
             }
             foreach(char c in str)
             {
                 if (c != chars.Pop())
                 {
+                    
                     return false;
                 }
             }
+
             return true;
         }
 
